@@ -26,9 +26,9 @@ gap:1em;
 
 .Screen{
 background-color: rgb(32, 33, 33);
-width: fit-content;
+width: 100%;
 height: 30%;
-border-radius: 30px;
+border-radius: 20px;
 }
 
 .Result{
@@ -37,12 +37,38 @@ border-radius: 30px;
   color: white
 }
 
-.Buttons{
+.Display{
 display: flex;
+flex-direction: column;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 gap:2em
+}
+
+.Buttons{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.rowMain{
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6em;
+  padding: .5em;
+
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 4.3em;
+  margin-left: 1em;
 }
 
 button{
@@ -89,7 +115,7 @@ font-size: 18px;
   white-space: nowrap;
   font-size: 18px;
   }
- 
+  
 button:focus {
 box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
