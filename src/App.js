@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react'
 import './App.css';
 
 function App() {
-
+  //les touche
+  let opsArray = ['/','*','-','+']
+  let numArray=[7,8,9,4,5,6,1,2,3,0,'.']
   // le resultat
-  // la ou on envoie le resultat des operateurs
   const [result, setResult]=useState([]) //[] 
-  
   const updateArray = (value) => {setResult([...result, value]);};
 
   // fonction reset
@@ -16,52 +16,41 @@ function App() {
   const calculate =()=>{
     let answer = [...result]
     let resultValue = eval(answer.join(''))
-    setResult([resultValue.toFixed(4)]) // reajoute le resultat dans une array pour continuer calcul
-  
+    setResult([resultValue.toFixed(2)]) // reajoute le resultat dans une array pour continuer calcul
   }
 
+  //Render dynamically buttons
+  const renderNumButtons =()=>{
+    return numArray.map((num)=>(
+      <button key={num} onClick={()=> updateArray(num)}>{num}</button>
+    ));
+  };
+  const renderOpsButtons =()=>{
+    return opsArray.map((op)=>(
+      <button key={op} className='operator' onClick={()=> updateArray(op)}>{op}</button>
+    ));
+  };
  
   return (
     <div className="Background">
-          <div className='Display'>
-            <div className='Screen'>
-              <div className='Result'>{result}</div>
-            </div>
+      <div className='Display'>
+        <div className='Screen'>
+          <div className='Result'>{result}</div>
+        </div>
               <div className='Buttons'>
               <div className='rowMain'>
               <div className='row'>
                 <button onClick={reset}>AC</button>
               </div>
-              <div className='row'>
-                  <button onClick={()=>updateArray(7)}>7</button>
-                  <button onClick={()=>updateArray(8)}>8</button>
-                  <button onClick={()=>updateArray(9)}>9</button>
+              <div className='row'>{renderNumButtons()}</div>
+                <div className='row'>
+                  <button onClick={()=>calculate()}>=</button>
+                </div>
               </div>
-              <div className='row'>
-                <button onClick={()=>updateArray(4)}>4</button>
-                <button onClick={()=>updateArray(5)}>5</button>
-                <button onClick={()=>updateArray(6)}>6</button>
+              <div className='col'>{renderOpsButtons()}</div>
               </div>
-              <div className='row'>
-                <button onClick={()=>updateArray(1)}>1</button> 
-                <button onClick={()=>updateArray(2)}>2</button>
-                <button onClick={()=>updateArray(3)}>3</button>
-              </div>
-              <div className='row'>
-                <button onClick={()=>updateArray(0)}>0</button>
-                <button onClick={()=>updateArray('.')}>.</button>
-                <button onClick={()=>calculate()}>=</button>
-              </div>
-              </div>
-              <div className='col'>
-                  <button className='operator' onClick={()=>updateArray('/')}>/</button>
-                  <button className='operator' onClick={()=>updateArray('*')}>*</button>
-                  <button className='operator' onClick={()=>updateArray('-')}>-</button>
-                  <button className='operator' onClick={()=>updateArray('+')}>+</button>
-              </div>
-        </div>
-        </div>
       </div>
+    </div>
   );
 }
 
