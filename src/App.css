@@ -5,14 +5,14 @@ margin:0
 }
 
 .Background{
-background-image: url(/Users/mariadiaz/Documents/BCS/calculator/my-app/src/image/shrexy.jpeg);
+background-image: url(/Users/mariadiaz/Documents/BCS/calculator/my-app/src/image/560560-modele-sans-couture-avec-la-carpe-koi-vectoriel.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-background-color: rgb(237, 188, 237);
+/* background-color: rgb(237, 188, 237); */
 border-radius: 30px;
 padding: 1rem;
 margin: 2em;
@@ -21,10 +21,6 @@ height: 40%;
 box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,rgba(45, 35, 66, 0.15) 0 7px 13px -3px,#D6D6E7 -3px -3px 0 inset;
 }
 
-.BackgroundImage{
-  filter: blur(5px);
-
-}
 
 .Display{
 display: flex;
@@ -118,7 +114,7 @@ width: calc(30%);
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,rgba(45, 35, 66, 0.15) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: violet;
+  color: rgb(8, 8, 63);
   display: inline-flex;
   font-family: "JetBrains Mono",monospace;
   height: 48px;
